@@ -198,6 +198,18 @@ and RunPod for GPU compute.
 * **ClimateBERT**: Webersinke et al. (2021), `climatebert/distilroberta-base-climate-detector`.
 * **Sentiment**: `cardiffnlp/twitter-roberta-base-sentiment-latest`.
 
+## Licence
+
+The code I wrote for this project is released under the [MIT Licence](LICENSE). That
+covers the scripts in `corpus/`, `classification/`, `evaluation/`, `finetuning/` and
+`analysis/`, along with `run_debunker.py`, `sample_claims.py` and
+`extend_climate_fever.py` in `debunking/`.
+
+It does not cover material that originates with others: `core.py`, `templates.py`,
+`definitions.py`, `examples.py` and `climate_fever_cards.csv` in `debunking/` are
+adapted from Zanartu et al. and remain subject to their terms, and the files in
+`data/public/` are derived from third party publications and the CARDS test set.
+
 ## Author
 
 Oliver Davies. MSc Security and Data Science (Distinction), University of Exeter.
