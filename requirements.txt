@@ -1,0 +1,22 @@
+# Corpus construction, evaluation and analysis (runs on a laptop)
+pandas
+numpy
+scikit-learn
+scipy
+matplotlib
+seaborn
+requests
+beautifulsoup4
+striprtf
+pymupdf
+openpyxl
+transformers
+torch
+tqdm
+
+# API clients for classification and trace generation
+huggingface_hub
+openai
+anthropic
+
+# GPU only packages (vLLM, Unsloth, LangChain) are listed in docs/gpu_runs.md
