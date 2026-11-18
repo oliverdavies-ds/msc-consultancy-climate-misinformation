@@ -179,6 +179,31 @@ See [`data/README.md`](data/README.md). Classification, fine tuning and debunkin
 GPU. See [`docs/gpu_runs.md`](docs/gpu_runs.md). The adapter weights are too large for
 GitHub, so only the adapter configuration is included.
 
+## Tests and data checks
+
+The cleaning steps have unit tests, and the merged corpus has to pass a set of data
+quality checks before it is saved. Run the tests with:
+
+```bash
+pytest
+```
+
+`tests/test_split_statements.py` checks that statement splitting joins paragraphs broken
+across pages, tidies whitespace, drops headings, keeps only statements of 10 to 300 words
+and numbers statements correctly. `tests/test_checks.py` checks that the data quality
+checks catch what they should.
+
+`corpus/checks.py` runs at the end of `merge_corpus.py` and stops the run, before anything
+is saved, if it finds missing values, duplicate IDs or statements, statements outside the
+10 to 300 word range, or dates outside the study period. It also runs on any saved table,
+including the public label file:
+
+```bash
+python corpus/checks.py data/public/corpus_results.csv
+```
+
+The tests run automatically on every push through GitHub Actions.
+
 ## Tools
 
 Python (pandas, scikit-learn, Hugging Face Transformers, Unsloth, vLLM, LangChain,

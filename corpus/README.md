@@ -14,6 +14,10 @@ Turns raw source documents into one table of climate related statements.
 | 4 | `merge_corpus.py` | `{source}_statements_climate.jsonl` | `data/corpus/corpus.csv` |
 | 5 | `corpus_composition.py` | statements and corpus | Tables 1 and 2 |
 
+`merge_corpus.py` finishes by running the data quality checks in `checks.py`, and stops
+without saving if the corpus has missing values, duplicates, statements outside the 10 to
+300 word range or dates outside the study period. The tests for these steps are in `tests/`.
+
 Steps 1a to 1c are independent, one per source group. Every source ends in the same
 schema (`doc_id`, `title`, `date_published`, `source`, `text`), so steps 2 to 4 treat
 all three identically.

@@ -20,3 +20,6 @@ openai
 anthropic
 
 # GPU only packages (vLLM, Unsloth, LangChain) are listed in docs/gpu_runs.md
+
+# Tests
+pytest
